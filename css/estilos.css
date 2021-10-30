@@ -1,0 +1,255 @@
+/*Configuración por defecto del sitio web */
+html{  
+    font-style: normal;
+    font-weight: bolder;
+    font-family:'Catamaran', sans-serif;
+    font-size: large;
+    padding: 0px;
+}
+/*font-family: 'Catamaran', sans-serif;-->*/
+
+@font-face{
+    font-family: "titulo";
+    src:url(../fonts/IndianaScript.ttf);
+}
+
+a{font-family:"titulo";
+  font-size: 2.0em;
+  padding-left: 1.3em;
+}
+
+/*Configuración color base de la hoja home */
+.moto{
+    color: rgb(78, 60, 58);
+}
+/*Configuración color base del resto del sitio web */
+.lamina{
+    color:white;
+}
+/*Configuración de los elementos de los navegadores*/
+a:link {text-decoration: none;}
+.moto a:visited {text-decoration: none; color: rgb(78, 60, 58);}
+.lamina a:visited {text-decoration: none; color: white;}
+.moto a:hover {color:rgb(1, 4, 163);}
+.lamina a:hover {color:yellow;}
+a:active {text-decoration: none;}
+
+/*Configuración de los elementos de las redes sociales*/
+i:link {text-decoration: none;}
+i:visited {text-decoration: none;color:rgb(78, 60, 58);}
+i:hover {color:rgb(1, 4, 163);}
+i:active {text-decoration: none;}
+
+/*background de la hoja home de la pagina*/
+body.moto{
+    /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+    background-color: black;
+    /* Ubicación de la imagen */
+    background-image:url(../img/fondoNew.png);
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment:fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
+    /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+    background-position: center center;
+}
+/*background de las hojas diguientes del sitio*/
+body.lamina{
+    /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+    background-color: black;
+    /* Ubicación de la imagen */
+    background-image:url(../img/laminaPared.jpg);
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
+    /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+    background-position: center center;
+}
+/*configuracion para el efecto responsive de los productos*/
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+/*configuracion para el titulo*/
+h1{ 
+    font-family:"titulo";
+    text-align: center;
+    font-size: 2.8rem;
+    letter-spacing: 6px;
+    margin-top: 1px;
+}
+/*configuracion para el subtitulo*/
+h2{
+    font-family:"titulo";
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    margin-top: -20px;
+}
+/*configuracion de posicion del navegador*/
+nav{
+    text-align: center;
+    margin-left: -42px;
+    margin-top: -12px;
+}
+/*configuracion de posicion iconos redes sociales*/
+i{
+    padding-left: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+/*configuracion imagenes de productos en venta*/
+img{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 0px;
+    padding-left: 0px;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+/*configuracion descripcion de los productos en venta*/
+p{
+    position: absolute;
+    text-align: left;
+    width: 180px;
+    height: 132px;
+    left: 0px;
+    margin-left: 142px;
+    margin-top: 16px;
+    color: black;
+}
+footer div{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 6rem;
+    width: 120px;
+}
+
+/*efecto responsive para las cajas de productos*/
+.grid-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    gap: 0.1rem;
+}
+.grid-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: rgba(0, 0,0,0.3);
+    background-color: rgba(251, 249, 249, 0.959);
+    border-radius: 1rem;
+    margin-bottom: 15px;
+    gap: 0.1rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding-left: 1rem;
+    height: 144px;
+    width: 330px;
+}
+/*posicionamiento contacto*/
+#contact{
+    position: relative;
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 3rem;
+}
+
+/*posicionamiento formulario*/
+#form{
+    text-align: center;
+    position: relative;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 3.2rem;
+}
+/*posicionamiento del iframe del mapa de ubicacion*/
+#location{
+    position: relative;
+    width: 400px;
+    height: 320px;
+    top: 7rem;
+    align-self: right;
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+/*posicionamiento de redes sociales del home*/
+#rrssHome{
+    position: relative;
+    width: 240px;
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    color: rgb(78, 60, 58);
+    top: 120px;
+}
+
+/*Transformaciones 2D Iconos RRSS*/
+#instagram:hover{
+    transform: scale(1.5,1.5);
+}
+#facebook:hover{
+    transform: scale(1.5,1.5);
+}
+#whatsapp:hover{
+    transform: scale(1.5,1.5);
+}
+#rrssContact #instagram:hover{
+    transform: scale(1.5,1.5);
+    color: greenyellow;
+}
+#rrssContact #facebook:hover{
+    transform: scale(1.5,1.5);
+    color: greenyellow;
+}
+#rrssContact #whatsapp:hover{
+    transform: scale(1.5,1.5);
+    color: greenyellow;
+}
+img:hover{
+    position: relative;
+    transform: scale(1.8, 1.8);
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 100;
+}
+
+/*posicionamiento de redes sociales en la hoja de contacto*/
+#rrssContact{
+    align-items: center;
+    position: relative;
+    width: 240px;
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    bottom: 14.2rem;
+}
+
+/*posicionamiento formulario*/
+#formContact{
+    color: white;
+    position: relative;
+    width: 400px;
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    top: 1.2rem;
+}

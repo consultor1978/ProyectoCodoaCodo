@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/55d5b9dee2.js" crossorigin="anonymous"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');</style>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/motorcycle.ico">
+    <title>Contacto</title>
+    <style>
+        input[type="submit"]:disabled {
+          background-color: red;
+        }
+      </style>
+</head>
+<body class="lamina">
+    <header><!--Pisamos el color por defecto de las fuentes para que sean visibles en este fondo oscuro-->
+        <h1>¡Consultas!</h1>
+        <h2 class="contenedor">Te asesoramos</h2>
+        <nav><!--Navegador-->
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section><!--Código del formulario de contacto-->
+            <div class="container mt-2">
+                <div class="row">
+                  <div class="col-md-4 offset-md-4">
+            
+                    <form action="page2.php" id="myForm1" class="needs-validation" novalidate>
+                      <div class="form-group">
+                        Nombre<input name="myInput" id="fisrtNameId" type="text" class="form-control" pattern="^[a-z A-Z]{2,15}$" required autofocus>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">Solo letras (2 a 15 caracteres)</div>
+                      </div>
+                      <div class="form-group">
+                        Apellido<input name="myInput" id="lastNameId" type="text" class="form-control" pattern="^[a-z A-Z]{2,15}$" required>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">Solo letras (2 a 15 caracteres)</div>
+                      </div>
+                      <div class="form-group">
+                        E-mail<input type="email" name="myInput" id="emailId" class="form-control" pattern="^[a-zA-Z0–9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0–9](?:[a-zA-Z0–9-]{0,61}[a-zA-Z0–9])?(?:\.[a-zA-Z0–9](?:[a-zA-Z0–9-]{0,61}[a-zA-Z0–9])?)*$" required>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">No es un email válido</div>
+                      </div>
+                      <div class="form-group">
+                        Consulta<textarea form="myForm1" name="myInput" id="descId" type="text" class="form-control" required></textarea>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">Requerido</div>
+                      </div>
+                      <div class="form-group">
+                        <button id="submitBtn" type="submit" class="btn btn-secondary" disabled>Enviar</button>
+                      </div>
+            
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+              <script>
+                $(document).ready(function(){
+                  // ----------- Set all elements as INVALID --------------
+                  var myInputElements = document.querySelectorAll(".form-control");
+                  var i;
+                  for (i = 0; i < myInputElements.length; i++) {
+                    myInputElements[i].classList.add('is-invalid');
+                    myInputElements[i].classList.remove('is-valid');
+                  }
+                  // ----------------- Validate on submit -----------------
+                  let currForm1 = document.getElementById('myForm1');
+                  currForm1.addEventListener('submit', function(event) {
+                    if (currForm1.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    else {
+                      $("#submitBtn").attr("disabled",false);
+                      $('#submitBtn').addClass('btn-primary').removeClass('btn-secondary');
+                      currForm1.classList.add('was-validated');
+                    }
+                  }, false);
+                  // ----------------- Validate on input -----------------
+                  currForm1.querySelectorAll('.form-control').forEach(input => {
+                    input.addEventListener(('input'), () => {
+                      if (input.checkValidity()) {
+                        input.classList.remove('is-invalid');
+                        input.classList.add('is-valid');
+                      } else {
+                        input.classList.remove('is-valid');
+                        input.classList.add('is-invalid');
+                      }
+                      var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
+                      // $("#submitBtn").attr("disabled", !is_valid);
+                      if (is_valid) {
+                        $("#submitBtn").attr("disabled",false);
+                        $('#submitBtn').addClass('btn-primary').removeClass('btn-secondary');
+                      } else {
+                        $("#submitBtn").attr("disabled",true);
+                        $('#submitBtn').addClass('btn-secondary').removeClass('btn-primary');
+                      }
+                    });
+                  });
+                  // ------------------------------------------------------
+                });
+              </script>
+            </div>
+            <div id="contact">
+                <a href="mailto:cesaralberto6@gmail.com" style="color:rgb(209, 209, 6);">¡Buscamos distribuidores!</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.447656030898!2d-58.45987778416464!3d-34.56753786309281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5d72e74324f%3A0xd1fbfcee64fde825!2sVidal%201716%2C%20C1426AMH%20CABA!5e0!3m2!1ses-419!2sar!4v1633902592141!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div id="rrssContact">
+            <i class="fab fa-instagram fa-2x" id="instagram"></i>
+            <i class="fab fa-facebook fa-2x" id="facebook"></i>
+            <i class="fab fa-whatsapp fa-2x" id="whatsapp"></i>
+        </div>
+    </footer>
+</body>
+</html>
